@@ -1,0 +1,10 @@
+#progressbar {
+	position: relative;
+	border-radius:20%;
+    margin-top: -17px;
+    float: right;
+	width: 30px;
+	height: 20px;
+	background-color: red;
+	border: 1px solid darkgray;
+}

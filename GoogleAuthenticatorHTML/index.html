@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no" name="format-detection" />
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/user/all.js"></script>
+		<script type="text/javascript" src="js/index/index.js"></script>
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 750) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+						}
+					};
+
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+		<link href="css/bank.css" rel="stylesheet" type="text/css">
+		<link href="css/index/index.css" rel="stylesheet" type="text/css">
+		<title>绑定银行卡</title>
+	</head>
+
+	<body>
+		<header>
+			<div class="title"><span id="account_span">龙痞子</span>———痞子版Google身份认证 <span id="scanning_span">┊┊┊</span></div>
+		</header>
+		<img class="loading" src="images/loading.gif" />
+		<img class="loading" src="images/loading.gif" />
+		<img class="loading" src="images/loading.gif" />
+		<div id="context" style="display: none;">
+			<div class="bank_content">
+				<div id="qr_context_div">
+					<!--<div class="card">
+						<div class="card_number">
+							<div class="txt0">
+								<span style="font-size: 25px;">170 550</span><br>
+								<span>l801@qq.com</span>
+							</div>
+						</div>
+					</div>-->
+				</div>
+				<div class="click_pop">
+					<a href="javascript:void(0)">新增</a>
+				</div>
+			</div>
+			<div style="position: fixed;bottom: 0px; padding-left: 33%;padding-bottom: 10px;width: 100%;">
+				<p>重庆龙痞子：
+					<a href="tencent://message/?uin=765182321&Site=&Menu-=yes" target="_blank">lpizi.cn</a>
+				</p>
+			</div>
+		</div>
+		<div id="code" style="top: 8%;width:100%;height:100%;position:absolute;background:#000000;display: none;">
+			<!--盛放扫描控件的div-->
+		</div>
+		<script type="text/javascript" src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/index/scanning.js"></script>
+		<script type="text/javascript" src="js/index/socket.js"></script>
+	</body>
+
+</html>
